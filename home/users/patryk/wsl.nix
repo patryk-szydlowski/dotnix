@@ -8,6 +8,7 @@
     ../../programs/cli/starship.nix
     ../../programs/cli/eza.nix
     ../../programs/cli/zoxide.nix
+    ../../programs/cli/bat.nix
   ];
 
   home = {
