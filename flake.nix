@@ -46,11 +46,15 @@
         };
 
         homeConfigurations = {
-          "patryk@wsl" = withSystem "x86_64-linux" ({pkgs, ...}:
+          "patryk@wsl" = withSystem "x86_64-linux" ({
+            pkgs,
+            inputs',
+            ...
+          }:
             inputs.home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [./home/users/patryk/wsl.nix];
-              extraSpecialArgs = {inherit inputs;};
+              extraSpecialArgs = {inherit inputs inputs';};
             });
         };
       };
