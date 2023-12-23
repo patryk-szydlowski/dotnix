@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [inputs.nixos-vscode-server.nixosModules.default];
+
   programs.nix-ld.enable = true;
 
   services.vscode-server.enable = true;

@@ -21,8 +21,8 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
       imports = [
@@ -33,14 +33,23 @@
 
       perSystem = system @ {pkgs, ...}: {
         treefmt.config = import ./dev/formatter.nix {inherit (system) config pkgs;};
-
         devenv.shells.default = ./dev/shell.nix;
         checks.devenv = system.config.devenv.shells.default.ciDerivation;
       };
 
       flake = {
         nixosConfigurations = {
-          wsl = import ./system/hosts/wsl inputs;
+          wsl = inputs.nixpkgs.lib.nixosSystem {
+            modules = [./system/hosts/wsl];
+            specialArgs = {inherit inputs;};
+          };
+        };
+
+        homeConfigurations = {
+          "patryk@wsl" = inputs.home-manager.lib.homeManagerConfigurations {
+            modules = [./home/users/partyk/wsl.nix];
+            extraSpecialArgs = {inherit inputs;};
+          };
         };
       };
     };
