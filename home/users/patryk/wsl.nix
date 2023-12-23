@@ -7,6 +7,7 @@
     ../../programs/cli/devenv.nix
     ../../programs/cli/starship.nix
     ../../programs/cli/eza.nix
+    ../../programs/cli/zoxide.nix
   ];
 
   home = {
