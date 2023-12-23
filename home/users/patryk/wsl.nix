@@ -5,6 +5,7 @@
     ../../programs/cli/git.nix
     ../../programs/cli/direnv.nix
     ../../programs/cli/devenv.nix
+    ../../programs/cli/starship.nix
   ];
 
   home = {
