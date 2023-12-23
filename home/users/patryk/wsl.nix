@@ -6,6 +6,7 @@
     ../../programs/cli/direnv.nix
     ../../programs/cli/devenv.nix
     ../../programs/cli/starship.nix
+    ../../programs/cli/eza.nix
   ];
 
   home = {
