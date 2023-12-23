@@ -39,22 +39,25 @@
 
       flake = {
         nixosConfigurations = {
-          wsl = inputs.nixpkgs.lib.nixosSystem {
-            modules = [./system/hosts/wsl];
-            specialArgs = {inherit inputs;};
-          };
+          wsl = withSystem "x86_64-linux" (system:
+            inputs.nixpkgs.lib.nixosSystem {
+              modules = [./system/hosts/wsl];
+              specialArgs = {
+                inherit inputs;
+                inherit (system) inputs';
+              };
+            });
         };
 
         homeConfigurations = {
-          "patryk@wsl" = withSystem "x86_64-linux" ({
-            pkgs,
-            inputs',
-            ...
-          }:
+          "patryk@wsl" = withSystem "x86_64-linux" (system:
             inputs.home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
+              inherit (system) pkgs;
               modules = [./home/users/patryk/wsl.nix];
-              extraSpecialArgs = {inherit inputs inputs';};
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit (system) inputs';
+              };
             });
         };
       };
