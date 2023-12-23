@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   wsl.defaultUser = "patryk";
 
   users.users = {
@@ -7,6 +7,7 @@
       home = "/home/patryk";
       initialPassword = "password";
       extraGroups = ["wheel"];
+      shell = pkgs.zsh;
     };
   };
 
