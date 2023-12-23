@@ -22,7 +22,7 @@
   };
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({withSystem, ...}: {
       systems = ["x86_64-linux"];
 
       imports = [
@@ -46,11 +46,13 @@
         };
 
         homeConfigurations = {
-          "patryk@wsl" = inputs.home-manager.lib.homeManagerConfigurations {
-            modules = [./home/users/partyk/wsl.nix];
-            extraSpecialArgs = {inherit inputs;};
-          };
+          "patryk@wsl" = withSystem "x86_64-linux" ({pkgs, ...}:
+            inputs.home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              modules = [./home/users/patryk/wsl.nix];
+              extraSpecialArgs = {inherit inputs;};
+            });
         };
       };
-    };
+    });
 }
