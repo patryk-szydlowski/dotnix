@@ -1,8 +1,8 @@
 {
   imports = [
-    ../../programs/home-manager.nix
-    ../../programs/git.nix
-    ../../programs/direnv.nix
+    ../../programs/cli/home-manager.nix
+    ../../programs/cli/git.nix
+    ../../programs/cli/direnv.nix
   ];
 
   home = {
