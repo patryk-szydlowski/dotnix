@@ -7,6 +7,7 @@
   imports = [
     ../../programs/cli/zsh.nix
     ../../programs/cli/starship.nix
+    ../../programs/cli/less
 
     ../../programs/dev/git.nix
     ../../programs/dev/direnv.nix
