@@ -2,11 +2,22 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    enableCompletion = false;
+    enableCompletion = true;
     syntaxHighlighting.enable = true;
+    defaultKeymap = "viins";
+
+    history = {
+      expireDuplicatesFirst = true;
+      ignoreDups = true;
+      ignoreSpace = true;
+      extended = true;
+      save = 100000;
+      size = 100000;
+      share = false;
+    };
   };
 
   imports = [
-    ./plugins/zsh-autocomplete.nix
+    ./plugins/fzf-tab.nix
   ];
 }

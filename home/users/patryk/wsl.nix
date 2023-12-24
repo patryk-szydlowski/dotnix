@@ -1,14 +1,17 @@
 {
   imports = [
-    ../../programs/cli/home-manager.nix
     ../../programs/cli/zsh
-    ../../programs/cli/git.nix
-    ../../programs/cli/direnv.nix
-    ../../programs/cli/devenv.nix
     ../../programs/cli/starship.nix
+    ../../programs/cli/fzf.nix
     ../../programs/cli/eza.nix
-    ../../programs/cli/zoxide.nix
     ../../programs/cli/bat.nix
+    ../../programs/cli/zoxide.nix
+
+    ../../programs/dev/git.nix
+    ../../programs/dev/direnv.nix
+    ../../programs/dev/devenv.nix
+
+    ../../programs/misc/home-manager.nix
   ];
 
   home = {
