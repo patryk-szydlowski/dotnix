@@ -11,13 +11,9 @@
       ignoreDups = true;
       ignoreSpace = true;
       extended = true;
+      share = true;
       save = 100000;
       size = 100000;
-      share = false;
     };
   };
-
-  imports = [
-    ./plugins/fzf-tab.nix
-  ];
 }

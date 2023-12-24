@@ -1,11 +1,12 @@
 {
+  home = {
+    username = "patryk";
+    homeDirectory = "/home/patryk";
+  };
+
   imports = [
-    ../../programs/cli/zsh
+    ../../programs/cli/zsh.nix
     ../../programs/cli/starship.nix
-    ../../programs/cli/fzf.nix
-    ../../programs/cli/eza.nix
-    ../../programs/cli/bat.nix
-    ../../programs/cli/zoxide.nix
 
     ../../programs/dev/git.nix
     ../../programs/dev/direnv.nix
@@ -13,9 +14,4 @@
 
     ../../programs/misc/home-manager.nix
   ];
-
-  home = {
-    username = "patryk";
-    homeDirectory = "/home/patryk";
-  };
 }
