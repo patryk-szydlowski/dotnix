@@ -1,14 +1,34 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: let
+  makeCommand = args: lib.strings.concatStringsSep " " args;
+in {
   programs.pistol = {
     enable = true;
     associations = [
       {
         mime = "text/*";
-        command = "${pkgs.bat}/bin/bat --paging=never --color=always %pistol-filename%";
+        command = makeCommand [
+          "${pkgs.bat}/bin/bat"
+          "--paging=never"
+          "--style=plain"
+          "--color=always"
+          "%pistol-filename%"
+        ];
       }
       {
         mime = "inode/directory";
-        command = "${pkgs.eza}/bin/eza -hl --git --color=always --icons %pistol-filename%";
+        command = makeCommand [
+          "${pkgs.eza}/bin/eza"
+          "--git"
+          "--tree"
+          "--icons"
+          "--level=1"
+          "--color=always"
+          "%pistol-filename%"
+        ];
       }
     ];
   };

@@ -20,7 +20,20 @@
       prompt = "#${config.colorScheme.colors.base0E}";
     };
 
-    defaultCommand = "${pkgs.fd}/bin/fd --type file --ignore-case --hidden";
-    defaultOptions = ["--preview '${pkgs.pistol}/bin/pistol {}'"];
+    defaultCommand = "${pkgs.fd}/bin/fd --type file --type directory --ignore-case --hidden";
+    defaultOptions = [
+      "--height 80%"
+      "--layout reverse"
+      "--info inline"
+      "--border"
+      "--margin 1"
+      "--padding 1"
+      "--preview '${pkgs.pistol}/bin/pistol {}'"
+      "--preview-window right,border-rounded,wrap"
+    ];
+
+    fileWidgetCommand = "${pkgs.fd}/bin/fd --type file --ignore-case --hidden";
+
+    historyWidgetOptions = ["--no-preview"];
   };
 }

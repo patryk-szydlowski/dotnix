@@ -9,6 +9,7 @@
 
   packages = [
     pkgs.home-manager
+    pkgs.eza
   ];
 
   pre-commit.hooks = {

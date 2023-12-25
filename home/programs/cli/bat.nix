@@ -5,10 +5,7 @@
 }: {
   programs.bat = {
     enable = true;
-
-    config = {
-      theme = config.colorScheme.slug;
-    };
+    config.theme = config.colorScheme.slug;
 
     themes = {
       catppuccin-mocha = {
