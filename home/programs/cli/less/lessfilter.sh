@@ -1,14 +1,13 @@
 # !/bin/sh
 
-mime=$(file -Lbs --mime-type "$1")
-category=${mime%%/*}
-kind=${mime##*/}
-ext=${1##*.}
+keyword="$1"
+keyword_mime=$(file -Lbs --mime-type "$keyword")
+keyword_category=${mime%%/*}
 
-if [ -d "$1" ]; then
-  @ezaDir@ -hl --git --color=always --icons "$1"
+if [ -d "$keyword" ]; then
+  @ezaPath@ -hl --git --color=always --icons "$keyword"
 elif [ "$category" = text ]; then
-  @batDir@ --color=always "$1"
+  @batPath@ --color=always "$keyword"
 else
   exit 1
 fi

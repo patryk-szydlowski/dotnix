@@ -6,10 +6,11 @@
 
   imports = [
     ../../programs/cli/zsh.nix
+    ../../programs/cli/color-scheme.nix
     ../../programs/cli/starship.nix
     ../../programs/cli/less
     ../../programs/cli/bat.nix
-    ../../programs/cli/color-scheme.nix
+    ../../programs/cli/fzf.nix
 
     ../../programs/dev/git.nix
     ../../programs/dev/direnv.nix

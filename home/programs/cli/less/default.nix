@@ -5,13 +5,13 @@
   };
 
   home = {
-    sessionVariables.LESS = "-FR";
+    sessionVariables.LESS = "-fFR";
     file.".lessfilter" = {
       executable = true;
       source = pkgs.substituteAll {
         src = ./lessfilter.sh;
-        ezaDir = "${pkgs.eza}/bin/eza";
-        batDir = "${pkgs.bat}/bin/bat";
+        ezaPath = "${pkgs.eza}/bin/eza";
+        batPath = "${pkgs.bat}/bin/bat";
       };
     };
   };
