@@ -8,7 +8,6 @@
 
     config = {
       theme = config.colorScheme.slug;
-      pager = "${pkgs.less}/bin/less";
     };
 
     themes = {

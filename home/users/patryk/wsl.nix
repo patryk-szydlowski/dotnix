@@ -8,7 +8,7 @@
     ../../programs/cli/zsh.nix
     ../../programs/cli/color-scheme.nix
     ../../programs/cli/starship.nix
-    ../../programs/cli/less
+    ../../programs/cli/pistol.nix
     ../../programs/cli/bat.nix
     ../../programs/cli/fzf.nix
 

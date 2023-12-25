@@ -21,5 +21,6 @@
     };
 
     defaultCommand = "${pkgs.fd}/bin/fd --type file --ignore-case --hidden";
+    defaultOptions = ["--preview '${pkgs.pistol}/bin/pistol {}'"];
   };
 }
