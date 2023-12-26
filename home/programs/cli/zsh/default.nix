@@ -1,7 +1,6 @@
 {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
@@ -18,6 +17,7 @@
   };
 
   imports = [
+    ./plugins/zsh-autosuggestions.nix
     ./plugins/fzf-tab
   ];
 }
