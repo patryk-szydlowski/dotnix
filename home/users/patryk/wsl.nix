@@ -5,7 +5,7 @@
   };
 
   imports = [
-    ../../programs/cli/zsh.nix
+    ../../programs/cli/zsh
     ../../programs/cli/color-scheme.nix
     ../../programs/cli/starship.nix
     ../../programs/cli/pistol.nix

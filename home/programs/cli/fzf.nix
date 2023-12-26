@@ -26,10 +26,10 @@
       "--layout reverse"
       "--info inline"
       "--border"
-      "--margin 1"
-      "--padding 1"
+      "--margin 0,1"
+      "--padding 0,1"
       "--preview '${pkgs.pistol}/bin/pistol {}'"
-      "--preview-window right,border-rounded,wrap"
+      "--preview-window right,border-rounded"
     ];
 
     fileWidgetCommand = "${pkgs.fd}/bin/fd --type file --ignore-case --hidden";

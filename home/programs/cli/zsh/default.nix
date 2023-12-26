@@ -16,4 +16,8 @@
       size = 100000;
     };
   };
+
+  imports = [
+    ./plugins/fzf-tab
+  ];
 }

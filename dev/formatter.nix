@@ -11,5 +11,6 @@
     deadnix.enable = true;
     statix.enable = true;
     shfmt.enable = true;
+    shellcheck.enable = true;
   };
 }
