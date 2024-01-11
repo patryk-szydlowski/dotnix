@@ -6,7 +6,13 @@ in {
   config = lib.mkIf (modules.config "home-manager.cli.git" config) {
     programs.git = {
       enable = true;
-      extraConfig = { init.defaultBranch = "main"; };
+      extraConfig = {
+        init.defaultBranch = "main";
+        commit.gpgSign = true;
+        gpg.format = "ssh";
+        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        user.signingKey = "~/.ssh/id_rsa";
+      };
     };
   };
 }
