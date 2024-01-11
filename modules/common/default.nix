@@ -1,1 +1,1 @@
-{ imports = [ ./nixpkgs ]; }
+{ imports = [ ./nix ]; }
