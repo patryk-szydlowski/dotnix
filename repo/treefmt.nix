@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  projectRootFile = "flake.nix";
+{ config, pkgs }: {
+  inherit (config.flake-root) projectRootFile;
 
   programs.nixfmt.enable = true;
   programs.statix.enable = true;
