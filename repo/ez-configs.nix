@@ -1,6 +1,7 @@
 { inputs, self, config }:
 let
-  flake = { inherit inputs self; };
+  lib = import ../libraries { inherit inputs; };
+  flake = { inherit inputs self lib; };
 
   rootDirectory = config.ezConfigs.root;
   configurationsDirectory = "${rootDirectory}/configurations";
