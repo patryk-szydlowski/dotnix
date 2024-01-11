@@ -11,5 +11,7 @@
     home-manager.cli.nix-index.enable = true;
     home-manager.security.ssh.enable = true;
     home-manager.users.patryk.enable = true;
+
+    nix-index-database.core.enable = true;
   };
 }
