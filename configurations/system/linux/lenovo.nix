@@ -10,6 +10,8 @@
     nix.settings.enable = true;
 
     nixos.core.enable = true;
+    nixos.users.patryk.enable = true;
+    nixos.users.root.enable = true;
 
     nixos-vscode-server.core.enable = true;
     nixos-vscode-server.wsl.enable = true;
