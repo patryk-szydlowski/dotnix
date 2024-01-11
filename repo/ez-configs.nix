@@ -14,6 +14,8 @@ in {
   nixos = {
     configurationsDirectory = "${configurationsDirectory}/system/linux";
     modulesDirectory = "${modulesDirectory}/system/linux";
+
+    hosts.lenovo.userHomeModules = [ "patryk" ];
   };
 
   darwin = {
