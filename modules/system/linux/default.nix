@@ -1,1 +1,1 @@
-{ imports = [ ../common ./nixos-wsl ]; }
+{ imports = [ ../common ./nixos-vscode-server ./nixos-wsl ]; }

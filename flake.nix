@@ -25,6 +25,10 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-vscode-server.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs = inputs@{ self, ... }:

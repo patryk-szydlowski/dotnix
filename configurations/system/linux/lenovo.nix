@@ -9,6 +9,9 @@
     nix.overlays.enable = true;
     nix.settings.enable = true;
 
+    nixos-vscode-server.core.enable = true;
+    nixos-vscode-server.wsl.enable = true;
+
     nixos-wsl.core.enable = true;
   };
 }
