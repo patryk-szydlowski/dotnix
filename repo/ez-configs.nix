@@ -1,12 +1,14 @@
 { inputs, self, config }:
 let
+  flake = { inherit inputs self; };
+
   rootDirectory = config.ezConfigs.root;
   configurationsDirectory = "${rootDirectory}/configurations";
   modulesDirectory = "${rootDirectory}/modules";
 in {
   root = ./..;
 
-  globalArgs = { flake = { inherit inputs self; }; };
+  globalArgs = { inherit flake; };
 
   nixos = {
     configurationsDirectory = "${configurationsDirectory}/system/linux";
