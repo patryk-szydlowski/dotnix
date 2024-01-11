@@ -8,5 +8,7 @@ in {
       userName = "Patryk Szydłowski";
       userEmail = "no-reply@patrykszydlowski.com";
     };
+
+    programs.keychain.keys = [ "id_rsa_github_personal" ];
   };
 }

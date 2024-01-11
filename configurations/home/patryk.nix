@@ -9,6 +9,7 @@
     home-manager.cli.git.enable = true;
     home-manager.cli.home-manager.enable = true;
     home-manager.cli.nix-index.enable = true;
+    home-manager.security.ssh.enable = true;
     home-manager.users.patryk.enable = true;
   };
 }

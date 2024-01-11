@@ -1,4 +1,4 @@
-{ flake, config, lib, pkgs, ... }:
+{ flake, config, lib, ... }:
 let inherit (flake.lib) modules;
 in {
   options = modules.option "home-manager.cli.home-manager";
