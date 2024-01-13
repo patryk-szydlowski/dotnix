@@ -5,6 +5,7 @@
   home.homeDirectory = osConfig.users.users.patryk.home;
 
   modules = {
+    home-manager.cli.direnv.enable = true;
     home-manager.cli.fish.enable = true;
     home-manager.cli.git.enable = true;
     home-manager.cli.home-manager.enable = true;

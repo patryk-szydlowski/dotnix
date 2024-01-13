@@ -1,5 +1,6 @@
 {
   imports = [
+    ./cli/direnv.nix
     ./cli/fish.nix
     ./cli/git.nix
     ./cli/home-manager.nix
