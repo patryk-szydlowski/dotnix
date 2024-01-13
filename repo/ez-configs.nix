@@ -1,4 +1,4 @@
-{ inputs, self, config }:
+{ inputs, self, config, ... }:
 let
   lib = import ../libraries { inherit inputs; };
   flake = { inherit inputs self lib; };

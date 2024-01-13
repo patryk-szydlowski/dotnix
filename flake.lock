@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "devshell": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1705004965,
+        "narHash": "sha256-yUy8bGvjopODhGgPN3gmwt8D1XxKpy88rtIB0qCbAFg=",
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "d45f45b634c624d2be705973b2af3b9bec29deff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
+        "type": "github"
+      }
+    },
     "ez-configs": {
       "inputs": {
         "flake-parts": [
@@ -217,6 +240,7 @@
     },
     "root": {
       "inputs": {
+        "devshell": "devshell",
         "ez-configs": "ez-configs",
         "flake-parts": "flake-parts",
         "flake-root": "flake-root",

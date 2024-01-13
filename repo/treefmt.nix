@@ -1,4 +1,4 @@
-{ config, pkgs }: {
+{ config, pkgs, ... }: {
   inherit (config.flake-root) projectRootFile;
 
   programs.nixfmt.enable = true;

@@ -1,0 +1,10 @@
+# code editors
+.vscode
+.idea
+.fleet
+
+# development
+.direnv
+
+# build outputs
+result

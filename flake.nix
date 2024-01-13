@@ -12,6 +12,10 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
+    devshell.inputs.flake-utils.follows = "flake-utils";
+
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     ez-configs.inputs.flake-parts.follows = "flake-parts";
@@ -42,6 +46,7 @@
         inputs.flake-parts.flakeModules.easyOverlay
         inputs.flake-root.flakeModule
         inputs.treefmt-nix.flakeModule
+        inputs.devshell.flakeModule
         inputs.ez-configs.flakeModule
       ];
 
@@ -49,6 +54,9 @@
 
       perSystem = { system, config, pkgs, ... }: {
         treefmt = import ./repo/treefmt.nix { inherit config pkgs; };
+
+        devshells = import ./repo/devshells.nix { inherit pkgs; };
+
         overlayAttrs = import ./overlays { inherit pkgs; };
 
         _module.args.pkgs = import inputs.nixpkgs {
