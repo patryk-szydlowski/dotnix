@@ -1,1 +1,1 @@
-{ imports = [ ./core.nix ./wsl.nix ]; }
+{ imports = [ ./core.nix ]; }

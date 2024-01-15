@@ -14,7 +14,6 @@
     nixos.users.root.enable = true;
 
     nixos-vscode-server.core.enable = true;
-    nixos-vscode-server.wsl.enable = true;
 
     nixos-wsl.core.enable = true;
   };
