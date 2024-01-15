@@ -14,5 +14,7 @@
     home-manager.users.patryk.enable = true;
 
     nix-index-database.core.enable = true;
+
+    sops-nix.core.enable = true;
   };
 }

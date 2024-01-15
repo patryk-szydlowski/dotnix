@@ -1,1 +1,1 @@
-_: { default = { }; }
+{ pkgs, ... }: { default = { packages = [ pkgs.sops ]; }; }

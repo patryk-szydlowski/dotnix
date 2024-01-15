@@ -4,6 +4,7 @@
   programs.nixfmt.enable = true;
   programs.statix.enable = true;
   programs.deadnix.enable = true;
+  programs.yamlfmt.enable = true;
 
   settings.formatter = {
     editorconfig-checker = {
