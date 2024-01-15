@@ -8,6 +8,12 @@ in {
 
     sops.secrets = {
       "patryk.password.hashed".neededForUsers = true;
+      "patryk.age.keys.private".owner = config.users.users.patryk.name;
+    };
+
+    environment.etc = {
+      "sops/age/patryk/keys.txt".source =
+        config.sops.secrets."patryk.age.keys.private".path;
     };
   };
 }

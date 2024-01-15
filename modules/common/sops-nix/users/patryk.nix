@@ -9,6 +9,11 @@ in {
         key = "password/hashed";
         sopsFile = ./patryk.secrets.yaml;
       };
+
+      "patryk.age.keys.private" = {
+        key = "age/keys/private";
+        sopsFile = ./patryk.secrets.yaml;
+      };
     };
   };
 }
