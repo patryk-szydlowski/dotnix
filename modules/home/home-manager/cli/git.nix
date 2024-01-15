@@ -10,8 +10,6 @@ in {
         init.defaultBranch = "main";
         commit.gpgSign = true;
         gpg.format = "ssh";
-        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-        user.signingKey = "~/.ssh/id_rsa";
       };
     };
   };

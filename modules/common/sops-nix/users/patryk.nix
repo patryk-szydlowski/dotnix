@@ -15,8 +15,8 @@ in {
         sopsFile = ./patryk.secrets.yaml;
       };
 
-      "patryk.ssh.keys.private" = {
-        key = "ssh/keys/private";
+      "patryk.ssh.keys.patryk-szydlowski@github.private" = {
+        key = "ssh/keys/patryk-szydlowski@github/private";
         sopsFile = ./patryk.secrets.yaml;
       };
     };
