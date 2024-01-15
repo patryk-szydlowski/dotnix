@@ -9,11 +9,14 @@ in {
     sops.secrets = {
       "patryk.password.hashed".neededForUsers = true;
       "patryk.age.keys.private".owner = config.users.users.patryk.name;
+      "patryk.ssh.keys.private".owner = config.users.users.patryk.name;
     };
 
     environment.etc = {
       "sops/age/patryk/keys.txt".source =
         config.sops.secrets."patryk.age.keys.private".path;
+      "sops/ssh/patryk/id_rsa".source =
+        config.sops.secrets."patryk.ssh.keys.private".path;
     };
   };
 }

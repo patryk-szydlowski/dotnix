@@ -14,6 +14,11 @@ in {
         key = "age/keys/private";
         sopsFile = ./patryk.secrets.yaml;
       };
+
+      "patryk.ssh.keys.private" = {
+        key = "ssh/keys/private";
+        sopsFile = ./patryk.secrets.yaml;
+      };
     };
   };
 }

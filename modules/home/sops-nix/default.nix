@@ -1,1 +1,1 @@
-{ imports = [ ./core.nix ./users/patryk.nix]; }
+{ imports = [ ./core.nix ./users/patryk.nix ]; }

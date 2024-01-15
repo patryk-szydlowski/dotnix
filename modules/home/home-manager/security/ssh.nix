@@ -9,7 +9,10 @@ in {
       addKeysToAgent = "yes";
     };
 
-    programs.keychain.enable = true;
+    programs.keychain = {
+      enable = true;
+      extraFlags = [ "--quiet" "--noask" ];
+    };
 
     services.ssh-agent.enable = true;
   };
