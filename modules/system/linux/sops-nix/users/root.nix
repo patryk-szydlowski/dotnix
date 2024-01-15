@@ -6,7 +6,7 @@ in {
       hashedPasswordFile = config.sops.secrets."root.password.hashed".path;
     };
 
-    sops.secrets = { "root.password.hashed".neededForUsers = true; };
+    sops.secrets = { "root.password.hashed" = { neededForUsers = true; }; };
   };
 }
 

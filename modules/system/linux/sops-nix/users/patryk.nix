@@ -8,19 +8,7 @@ in {
       hashedPasswordFile = config.sops.secrets."patryk.password.hashed".path;
     };
 
-    sops.secrets = {
-      "patryk.password.hashed".neededForUsers = true;
-      "patryk.age.keys.private".owner = patryk;
-      "patryk.ssh.keys.patryk-szydlowski@github.private".owner = patryk;
-    };
-
-    environment.etc = {
-      "sops/age/patryk/keys.txt".source =
-        config.sops.secrets."patryk.age.keys.private".path;
-        
-      "sops/ssh/patryk/patryk-szydlowski@github".source =
-        config.sops.secrets."patryk.ssh.keys.patryk-szydlowski@github.private".path;
-    };
+    sops.secrets = { "patryk.password.hashed" = { neededForUsers = true; }; };
   };
 }
 
