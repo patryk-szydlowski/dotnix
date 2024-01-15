@@ -1,8 +1,11 @@
 keys:
   users:
     - &patryk age15qlfagw2qz5kjghach7lpdumtrm7v82kzc0aj4qeju3kzlkz9cnsttvjjt
+  hosts:
+    - &lenovo age1kaf5jykx2m9eyesv9zsceysrpa8vf9v2ljhcguxt6h55pc0944cs2eywlt
 creation_rules:
   - path_regex: ^(.*).secrets.yaml$
     key_groups:
       - age:
           - *patryk
+          - *lenovo

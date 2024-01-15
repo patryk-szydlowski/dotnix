@@ -16,5 +16,7 @@
     nixos-vscode-server.core.enable = true;
 
     nixos-wsl.core.enable = true;
+
+    sops-nix.core.enable = true;
   };
 }
