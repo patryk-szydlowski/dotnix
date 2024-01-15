@@ -15,6 +15,8 @@ in {
       optimise.automatic = true;
     };
 
+    users.mutableUsers = false;
+
     security.sudo = {
       enable = true;
       wheelNeedsPassword = false;

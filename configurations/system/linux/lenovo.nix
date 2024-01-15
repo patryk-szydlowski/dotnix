@@ -18,5 +18,7 @@
     nixos-wsl.core.enable = true;
 
     sops-nix.core.enable = true;
+    sops-nix.users.patryk.enable = true;
+    sops-nix.users.root.enable = true;
   };
 }

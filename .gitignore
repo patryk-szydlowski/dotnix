@@ -5,6 +5,7 @@
 
 # development
 .direnv
+.decrypted~*
 
 # build outputs
 result
