@@ -1,0 +1,15 @@
+name: cd
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * 0
+jobs:
+  update-flake-lock:
+    name: update flake lock
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-nix
+      - uses: ./.github/actions/update-flake-lock
+        with:
+          github-token: ${{ secrets.FLAKE_LOCK_UPDATE_GITHUB_TOKEN }}

@@ -1,0 +1,14 @@
+name: update flake lock
+description: updates outdated dependencies in flake lock file
+inputs:
+  github-token:
+    description: token used to verify against github when creating PRs
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: DeterminateSystems/update-flake-lock@v20
+      with:
+        token: ${{ inputs.github-token }}
+        pr-title: "chore(flake): update flake.lock dependencies"
+        commit-msg: "chore(flake): update flake.lock dependencies"
