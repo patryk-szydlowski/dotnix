@@ -1,0 +1,29 @@
+name: update flake lock
+description: updates outdated dependencies in flake lock file
+inputs:
+  github-token:
+    description: token used to verify against github when creating PRs
+    required: true
+  gpg-private-key:
+    description: GPG key used to sign commits
+    required: true
+  gpg-passphrase:
+    description: GPG signing key passphrase
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: DeterminateSystems/update-flake-lock@v20
+      with:
+        token: ${{ inputs.github-token }}
+        commit-msg: "chore(flake): update `flake.lock` dependencies"
+        pr-title: "chore(flake): update `flake.lock` dependencies"
+        pr-body: |
+          ```
+          {{ env.GIT_COMMIT_MESSAGE }}
+          ```
+        pr-assignees: dotnix-bot
+        pr-reviewers: patryk-szydlowski
+        sign-commits: true
+        gpg-private-key: ${{ inputs.gpg-private-key }}
+        gpg-passphrase: ${{ inputs.gpg-passphrase }}

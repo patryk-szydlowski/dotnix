@@ -3,5 +3,5 @@ description: runs flake checks
 runs:
   using: composite
   steps:
-    - run: nix flake check --all-systems
-      shell: bash
+    - shell: bash
+      run: nix flake check --all-systems
