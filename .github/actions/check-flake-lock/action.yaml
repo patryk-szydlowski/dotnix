@@ -1,0 +1,9 @@
+name: check flake lock
+description: checks flake lock file for outdated dependencies
+runs:
+  using: composite
+  steps:
+    - uses: DeterminateSystems/flake-checker-action@v5
+      with:
+        fail-mode: true
+        send-statistics: false

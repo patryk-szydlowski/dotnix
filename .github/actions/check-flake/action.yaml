@@ -1,0 +1,7 @@
+name: check flake
+description: runs flake checks
+runs:
+  using: composite
+  steps:
+    - run: nix flake check --all-systems
+      shell: bash
