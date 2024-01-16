@@ -6,8 +6,8 @@
   wsl.wslConf.network.hostname = "lenovo";
 
   modules = {
+    nix.core.enable = true;
     nix.overlays.enable = true;
-    nix.settings.enable = true;
 
     nixos.core.enable = true;
     nixos.users.patryk.enable = true;

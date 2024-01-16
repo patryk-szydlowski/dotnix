@@ -1,1 +1,1 @@
-{ imports = [ ./overlays.nix ./settings.nix ]; }
+{ imports = [ ./overlays.nix ]; }

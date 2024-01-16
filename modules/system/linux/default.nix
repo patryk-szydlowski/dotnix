@@ -1,3 +1,4 @@
 {
-  imports = [ ../common ./nixos ./nixos-vscode-server ./nixos-wsl ./sops-nix ];
+  imports =
+    [ ../common ./nix ./nixos ./nixos-vscode-server ./nixos-wsl ./sops-nix ];
 }

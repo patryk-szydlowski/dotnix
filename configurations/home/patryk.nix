@@ -13,6 +13,8 @@
     home-manager.security.ssh.enable = true;
     home-manager.users.patryk.enable = true;
 
+    nix.overlays.enable = true;
+
     nix-index-database.core.enable = true;
 
     sops-nix.core.enable = true;
