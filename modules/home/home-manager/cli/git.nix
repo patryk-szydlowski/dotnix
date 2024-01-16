@@ -8,6 +8,7 @@ in {
       enable = true;
       extraConfig = {
         init.defaultBranch = "main";
+        push.autoSetupRemote = true;
         commit.gpgSign = true;
         gpg.format = "ssh";
       };
