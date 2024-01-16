@@ -1,0 +1,36 @@
+name: update flake lock
+description: updates outdated dependencies in flake lock file
+inputs:
+  github-token:
+    description: token used to verify against github when creating PRs
+    required: true
+  gpg-private-key:
+    description: GPG key used to sign commits
+    required: true
+  gpg-passphrase:
+    description: GPG signing key passphrase
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: DeterminateSystems/update-flake-lock@v20
+      id: create-pr
+      with:
+        token: ${{ inputs.github-token }}
+        branch: chore/update-flake-lock
+        sign-commits: true
+        commit-msg: "chore(flake): update `flake.lock` dependencies"
+        gpg-private-key: ${{ inputs.gpg-private-key }}
+        gpg-passphrase: ${{ inputs.gpg-passphrase }}
+        pr-title: "chore(flake): update `flake.lock` dependencies"
+        pr-assignees: dotnix-bot
+        pr-body: |
+          ```
+          {{ env.GIT_COMMIT_MESSAGE }}
+          ```
+    - uses: peter-evans/enable-pull-request-automerge@v3
+      if: steps.create-pr.outputs.pull-request-operation == 'created'
+      with:
+        token: ${{ inputs.github-token }}
+        pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+        merge-method: squash
