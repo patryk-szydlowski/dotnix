@@ -8,6 +8,7 @@
     home-manager.cli.direnv.enable = true;
     home-manager.cli.fish.enable = true;
     home-manager.cli.git.enable = true;
+    home-manager.cli.github.enable = true;
     home-manager.cli.home-manager.enable = true;
     home-manager.cli.nix-index.enable = true;
     home-manager.security.ssh.enable = true;
