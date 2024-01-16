@@ -61,7 +61,7 @@
 
         devshells = import ./repo/devshells.nix { inherit pkgs; };
 
-        overlayAttrs = import ./overlays { inherit pkgs; };
+        overlayAttrs = import ./overlays { inherit inputs pkgs; };
 
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
